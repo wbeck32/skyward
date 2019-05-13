@@ -1,0 +1,23 @@
+{
+  "name": "skyward",
+  "version": "1.0.0",
+  "description": "Simple React app to access an external API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbeck32/skyward.git"
+  },
+  "author": "Wendy Beck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbeck32/skyward/issues"
+  },
+  "homepage": "https://github.com/wbeck32/skyward#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
