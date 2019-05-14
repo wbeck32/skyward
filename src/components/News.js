@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 import Items from './Items';
 import React, { Component } from 'react';
-
 
 class News extends Component {
   constructor() {
@@ -39,37 +37,5 @@ class News extends Component {
     );
 
   }
-=======
-import {Component} from 'react';
-import Items from './Items';
-
-
-class News extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      view : ''
-    };
-  }
-  changeView = (async () => {
-    //TODO: logic is not correct
-    this.state.view == '' ? this.setState={view:'list'}:this.setState={view:'card'};
-  })
-
-render() {
-let {view} = this.state;
-return(
-  <div>
-  <div class='changeView'>
-  <button onclick="changeView()"/>
-  </div>
-  <div class="items">
-  <Items view = {view}/>
-  </div>
-  </div>
-);
-
-}
->>>>>>> ab3f4d4a9c17f36b393aa654dd89920abf8c8ad3
 }
 export default News;
