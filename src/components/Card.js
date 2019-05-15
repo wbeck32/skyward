@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Card = (props) => {
-  console.log('card: ', props);
+  const { sortBy, itemData } = props
+  console.log('sortBy, itemData: ', sortBy, itemData);
+  
 
   return (
-    <div> 
+       <div>
       {props.isCard}
      </div>
   );

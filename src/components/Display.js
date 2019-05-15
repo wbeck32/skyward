@@ -51,18 +51,18 @@ class Display extends Component {
   };
 
   render() {
-    const { isList, isCard, sortBy, availableIds, itemData } = this.state
+    const { isList, isCard, sortBy, itemData } = this.state
     return (
       <div>
         {isList &&
           <div>
             <span onClick={() => this.toggleView()}>switch to cards</span>
-            <List sortBy={sortBy} availableIds={availableIds} itemData={itemData} />
+            <List sortBy={sortBy} itemData={itemData} />
           </div>}
         {isCard &&
           <div>
             <span onClick={() => this.toggleView()}>switch to list</span>
-            <Card sortBy={sortBy} availableIds={availableIds} itemData={itemData} />
+            <Card sortBy={sortBy} itemData={itemData} />
           </div>
         }
       </div>
