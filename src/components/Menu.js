@@ -1,35 +1,22 @@
 import React from 'react';
-import News from './News'
-import Jobs from './Jobs'
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink
-} from 'react-router-dom';
-
-
+import '../static/Menu.css'
+import SubMenu from './SubMenu'
 const Menu = (props) => {
-  console.log('menu: ', props)
-
   return (
     <div>
-      <Router>
-        <div className="navLinks">
-          <span>
-            <NavLink to={{ pathname: '/news' }}>News</NavLink>
-          </span>{' '}
-          <span>
-            <NavLink to={{ pathname: '/jobs' }}>Jobs</NavLink>
-          </span>{' '}
-
-        </div>
-        <Route exact path="/jobs" component={Jobs} />
-        <Route exact path="/news" component={News} />
-      </Router>
-    </div>
+      <div className="menu">
+        <span>
+          <a href='/news'>News</a>
+        </span>{' '}
+        <span>
+          <a href='/jobs'>Jobs</a>
+        </span>{' '}
+      </div>
+      <div>
+        <SubMenu thisPage="jobs" />
+      </div>
+    </div >
   );
-
 };
-
 
 export default Menu;

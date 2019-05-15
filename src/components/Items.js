@@ -1,46 +1,62 @@
-import Card from './Card';
-import List from './List';
+import News from './News'
+import Jobs from './Jobs'
+import Menu from './Menu'
+import '../static/Items.css'
 import React, {Component} from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
+// import {createBrowserHistory, createMemoryHistory} from 'history'
 
 class Items extends Component{
   constructor() {
     super();
     this.state = {
-      isList: false,
-      isCard: true,
+      isList: true,
+      isCard: false,
       availableIds: [],
-      sortBy: 'recent'
+      sortBy: '',
     };
   }
 
-  // sortBy = (e) => {
-  //   e.preventDefault();
-  //   this.setState(state=>{
-  //     sortBy:'score'
-  //   })
-  // }
+  sortBy = (order)=> {
+    // e.preventDefault();
+    console.log(order)
+    // this.setState({sortBy:order})
 
-  // toggleView = (e) => {
+  }
+
+  // toggleView = (e)=> {
   //   e.preventDefault();
   //   this.setState(state => ({
   //     isList: !state.isList,
   //     isCard: !state.isCard
   //   }))
-  // }
+  // };
+
+  render() {
+    return(
+    <div>
+      <div>
+      <Menu />
+      </div>
+      <div>
 
 
- render(){
-   console.log('this: ', this);
-   const {isList,isCard,availableIds,sortBy} = this.props;
+      </div>
+      <div>
+      <Router>
+      <div className="items">
+      <Route path={["/jobs/author"]} component={Jobs} />
+      <Route path={["/news/*"]} component={News} />
+      </div>
+      </Router>
+      </div>
+      </div>
+      )
 
-   if (isList === true) {
-     return (
-       <List isList={isList} availableIds={availableIds} sortBy={sortBy} />
-       )
-      } else {
-        return <Card isCard={isCard} availableIds={availableIds} />
-      }
     }
-};
+  };
 
-export default Items;
+  export default Items;

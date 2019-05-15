@@ -1,40 +1,52 @@
-import Items from './Items';
 import React, { Component } from 'react';
+import List from './List';
+import Card from './Card'
 
 class Jobs extends Component {
   constructor() {
     super();
     this.state = {
-      isList: false,
-      isCard: true,
+      isList: true,
+      isCard: false,
       availableIds: [],
-      sortBy: 'recent'
+      sortBy: 'author'
     };
   }
 
-  // toggleView = (e) => {
-  //   e.preventDefault();
-  //   this.setState(state => ({
-  //     isList: !state.isList,
-  //     isCard: !state.isCard
-  //   }))
-  // }
 
   componentDidMount = (async () => {
     const availableIds = await fetch(``);
     this.setState({ availableIds })
   })
 
+  toggleView = (e) => {
+    console.log(e, this.state)
+    e.preventDefault();
+    this.setState(state => ({
+      isList: !state.isList,
+      isCard: !state.isCard
+    }))
+  };
+
   render() {
     console.log('jobs: ', this.state)
     const { isList, isCard, availableIds, sortBy } = this.state
-    return (
-      <div className="items">
-        jobs
-        <Items isList={isList} isCard={isCard} availableIds={availableIds} sortBy={sortBy} />
-      </div>
-    );
 
+    if (isList === true) {
+      return (
+        <div>
+          <span onClick={(e) => this.toggleView}>switch to cards</span>
+          <List availableIds={availableIds} sortBy={sortBy} />
+        </div>
+      )
+    } else if (isCard === true) {
+      return (
+        <div>
+          <span onClick={(e) => this.toggleView}>switch to list</span>
+          <Card availableIds={availableIds} sortBy={sortBy} />
+        </div >
+      )
+    }
   }
 }
 export default Jobs;

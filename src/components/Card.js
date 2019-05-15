@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Card = (props) => {
-  console.log('card: ', props)
+  console.log('card: ', props);
 
   return (
-    <div>
-      {props.isList}
-    </div>
+    <div> 
+      {props.isCard}
+     </div>
   );
 };
 

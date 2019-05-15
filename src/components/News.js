@@ -1,11 +1,14 @@
-import Items from './Items';
+// import Items from './Items';
 import React, { Component } from 'react';
 
 class News extends Component {
   constructor() {
     super();
-    this.state = {
-      availableIds: [],
+      this.state = {
+        isList: true,
+        isCard: false,
+        availableIds: [],
+        sortBy: 'recent'
     };
   }
 
@@ -18,16 +21,16 @@ this.setState({availableIds})
   render() {
     console.log('news: ', this.state)
 
-    const { availableIds } = this.state
+    // const { isList, isCard, availableIds, sortBy } = this.state
     return (
       <div>
         <div className="items">
         news
-          <Items availableIds={availableIds}/>
         </div>
-      </div>
-    );
-  }
-}
+        </div>
+        );
+      }
+    }
 
-export default News;
+    export default News;
+    // <Items isList={isList} isCard={isCard} availableIds={availableIds} sortBy={sortBy}/>
