@@ -8,7 +8,6 @@ export function compareValues(key, order = 'asc') {
       break;
     default:
       break;
-
   }
 
   return function (a, b) {

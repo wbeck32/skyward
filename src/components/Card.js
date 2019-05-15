@@ -4,8 +4,6 @@ import { compareValues } from '../helpers'
 
 const Card = (props) => {
   const { sortBy, itemData } = props
-  console.log('itemData: ', Object.values(itemData));
-  console.log('sortBy: ', sortBy);
 
   itemData.sort(compareValues(sortBy));
 

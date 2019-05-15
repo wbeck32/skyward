@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import List from './List';
 import Card from './Card';
-import ReactPaginate from 'react-paginate';
 
 class Display extends Component {
   constructor() {
@@ -22,7 +21,7 @@ class Display extends Component {
     let url = pageType === 'news' ? 'newstories' : 'jobstories'
     const response = await fetch(`https://hacker-news.firebaseio.com/v0/${url}.json?print=pretty`);
     let availableIds = await response.json()
-    this.setState({ availableIds })
+    this.setState({ availableIds: availableIds.slice(0, 30) })
     const itemData = await this.itemData()
     this.setState({ itemData })
   })
@@ -57,20 +56,8 @@ class Display extends Component {
       <div>
         {isList &&
           <div>
-            <div className="link toggle" onClick={() => this.toggleView()}>view as cards</div>
+            <div className="link toggle menu" onClick={() => this.toggleView()}>view as cards</div>
             <List sortBy={sortBy} itemData={itemData} />
-            <ReactPaginate
-              previousLabel={'previous'}
-              nextLabel={'next'}
-              breakLabel={'...'}
-              breakClassName={'break-me'}
-              pageCount={20}
-              marginPagesDisplayed={2}
-              pageRangeDisplayed={5}
-              containerClassName={'pagination'}
-              subContainerClassName={'pages pagination'}
-              activeClassName={'active'}
-            />
           </div>}
         {isCard &&
           <div>

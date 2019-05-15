@@ -13,12 +13,10 @@ const SubMenu = (props) => {
   }
 
   return (
-    <div>
-      <div className="menu submenu sortby">
-        <span className="link" onClick={() => handleOrder('/recent')}>&nbsp;recent</span>&nbsp;&nbsp;||&nbsp;&nbsp;
+    <div className="menu">
+      <span className="link" onClick={() => handleOrder('/recent')}>&nbsp;recent</span>&nbsp;&nbsp;||&nbsp;&nbsp;
     <span className="link" onClick={() => handleOrder('/author')}>&nbsp;author</span>&nbsp;&nbsp;||&nbsp;&nbsp;
     <span className="link" onClick={() => handleOrder('/score')}>&nbsp;score</span>
-      </div>
     </div>
   );
 };

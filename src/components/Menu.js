@@ -14,9 +14,7 @@ const Menu = (props) => {
           <a href='/jobs'>Jobs</a>
         </span>
       </div>
-      <div>
-        <SubMenu thisPage={thisPage} />
-      </div>
+      <SubMenu thisPage={thisPage} />
     </div>
   );
 };
