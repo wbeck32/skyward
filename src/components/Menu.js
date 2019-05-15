@@ -1,7 +1,10 @@
 import React from 'react';
-import '../static/Menu.css'
-import SubMenu from './SubMenu'
+import '../static/Menu.css';
+import SubMenu from './SubMenu';
+
 const Menu = (props) => {
+  const thisPage = window.location.pathname.split('/')[1]
+
   return (
     <div>
       <div className="menu">
@@ -13,10 +16,9 @@ const Menu = (props) => {
         </span>{' '}
       </div>
       <div>
-        <SubMenu thisPage="jobs" />
+        <SubMenu thisPage={thisPage} />
       </div>
-    </div >
+    </div>
   );
 };
-
 export default Menu;

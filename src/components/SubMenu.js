@@ -2,7 +2,6 @@ import React from 'react';
 import '../static/Menu.css'
 import { createBrowserHistory } from 'history'
 
-
 const SubMenu = (props) => {
   console.log('sm: ', props)
   const history = createBrowserHistory({
@@ -14,6 +13,7 @@ const SubMenu = (props) => {
     history.push(order, { sortBy: order })
     history.goForward()
   }
+
   return (
     <div>
       <div className="submenu sortby">
@@ -22,9 +22,8 @@ const SubMenu = (props) => {
         <span onClick={() => handleOrder('/author')}>author</span>{' '}
         <span onClick={() => handleOrder('/score')}>score</span>{' '}
       </div>
-    </div >
+    </div>
   );
 };
-
 
 export default SubMenu

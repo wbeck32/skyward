@@ -17,7 +17,7 @@ class Items extends Component{
       availableIds: [],
       sortBy: '',
     };
-  }
+  };
 
   sortBy = (order)=> {
     // e.preventDefault();
