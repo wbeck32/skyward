@@ -10,7 +10,7 @@ const Card = (props) => {
   itemData.sort(compareValues(sortBy));
 
   return (
-    <div className="container fluid-type">
+    <div className="container">
       {itemData.map(item =>
         <div className="item">
           <div key={item.id}>
