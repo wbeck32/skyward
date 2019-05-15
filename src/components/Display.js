@@ -61,7 +61,7 @@ class Display extends Component {
           </div>}
         {isCard &&
           <div>
-            <div className="link toggle" onClick={() => this.toggleView()}>view as list</div>
+            <div className="link toggle menu" onClick={() => this.toggleView()}>view as list</div>
             <Card sortBy={sortBy} itemData={itemData} />
           </div>
         }
