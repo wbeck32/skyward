@@ -1,10 +1,9 @@
 import Menu from './Menu'
 import Display from './Display'
-import React, {Component} from 'react';
-import '../static/Items.css'
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-class Items extends Component{
+class Items extends Component {
   constructor() {
     super();
     this.state = {
@@ -16,7 +15,7 @@ class Items extends Component{
   };
 
   render() {
-    return(
+    return (
       <div>
         <div>
           <Menu />
@@ -28,8 +27,8 @@ class Items extends Component{
           </Router>
         </div>
       </div>
-      )
-    }
+    )
   }
+}
 
-  export default Items;
+export default Items;

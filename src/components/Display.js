@@ -56,12 +56,12 @@ class Display extends Component {
       <div>
         {isList &&
           <div>
-            <span onClick={() => this.toggleView()}>switch to cards</span>
+            <div className="link toggle" onClick={() => this.toggleView()}>view as cards</div>
             <List sortBy={sortBy} itemData={itemData} />
           </div>}
         {isCard &&
           <div>
-            <span onClick={() => this.toggleView()}>switch to list</span>
+            <div className="link toggle" onClick={() => this.toggleView()}>view as list</div>
             <Card sortBy={sortBy} itemData={itemData} />
           </div>
         }

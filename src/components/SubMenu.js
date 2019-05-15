@@ -1,5 +1,4 @@
 import React from 'react';
-import '../static/Menu.css'
 import { createBrowserHistory } from 'history'
 
 const SubMenu = (props) => {
@@ -15,11 +14,10 @@ const SubMenu = (props) => {
 
   return (
     <div>
-      <div className="submenu sortby">
-        <span>sort by: </span>
-        <span onClick={() => handleOrder('/recent')}>recent</span>{' '}
-        <span onClick={() => handleOrder('/author')}>author</span>{' '}
-        <span onClick={() => handleOrder('/score')}>score</span>{' '}
+      <div className="menu submenu sortby">
+        <span className="link" onClick={() => handleOrder('/recent')}>&nbsp;recent</span>&nbsp;&nbsp;||&nbsp;&nbsp;
+    <span className="link" onClick={() => handleOrder('/author')}>&nbsp;author</span>&nbsp;&nbsp;||&nbsp;&nbsp;
+    <span className="link" onClick={() => handleOrder('/score')}>&nbsp;score</span>
       </div>
     </div>
   );

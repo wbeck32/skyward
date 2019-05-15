@@ -1,5 +1,4 @@
 import React from 'react';
-import '../static/Menu.css';
 import SubMenu from './SubMenu';
 
 const Menu = (props) => {
@@ -10,10 +9,10 @@ const Menu = (props) => {
       <div className="menu">
         <span>
           <a href='/news'>News</a>
-        </span>{' '}
+        </span>&nbsp;&nbsp;||&nbsp;&nbsp;
         <span>
           <a href='/jobs'>Jobs</a>
-        </span>{' '}
+        </span>
       </div>
       <div>
         <SubMenu thisPage={thisPage} />
@@ -21,4 +20,5 @@ const Menu = (props) => {
     </div>
   );
 };
+
 export default Menu;

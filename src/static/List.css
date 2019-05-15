@@ -1,0 +1,15 @@
+.list {
+text-align:left;
+}
+
+ul {
+  height: 5px;
+  margin: 5px;
+  text-align: left;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.author::before {
+content: '&darr;'
+}
