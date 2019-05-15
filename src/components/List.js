@@ -1,4 +1,5 @@
 import React from 'react';
+import '../static/List.css'
 import { compareValues } from '../helpers'
 
 const List = (props) => {

@@ -1,14 +1,26 @@
 import React from 'react';
+import '../static/Card.css'
+import { compareValues } from '../helpers'
 
 const Card = (props) => {
   const { sortBy, itemData } = props
+  console.log('itemData: ', Object.values(itemData));
   console.log('sortBy: ', sortBy);
 
+  itemData.sort(compareValues(sortBy));
+
   return (
-    <div className="card">
+    <div className="container fluid-type">
       {itemData.map(item =>
-        <div key={item.id}>
-          {item.title}
+        <div className="item">
+          <div key={item.id}>
+            <a href={item.url}>{item.title}</a>
+            <div className="details">
+              <div className="author">by:&nbsp;{item.by}</div>
+              <div className="time">time:&nbsp;{item.time}</div>
+              <div className="score">score:&nbsp;{item.score}</div>
+            </div>
+          </div>
         </div>
       )}
     </div>
