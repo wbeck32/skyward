@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List';
 import Card from './Card';
+import ReactPaginate from 'react-paginate';
 
 class Display extends Component {
   constructor() {
@@ -58,6 +59,18 @@ class Display extends Component {
           <div>
             <div className="link toggle" onClick={() => this.toggleView()}>view as cards</div>
             <List sortBy={sortBy} itemData={itemData} />
+            <ReactPaginate
+              previousLabel={'previous'}
+              nextLabel={'next'}
+              breakLabel={'...'}
+              breakClassName={'break-me'}
+              pageCount={20}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              containerClassName={'pagination'}
+              subContainerClassName={'pages pagination'}
+              activeClassName={'active'}
+            />
           </div>}
         {isCard &&
           <div>

@@ -10,7 +10,7 @@ const List = (props) => {
   itemData.sort(compareValues(sortBy));
 
   return (
-    <div className="list">
+    <div className="list fluid-type">
       {itemData.map(item =>
         <ul>
           <div key={item.id}>
