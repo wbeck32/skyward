@@ -1,19 +1,46 @@
 import Card from './Card';
 import List from './List';
-import React from 'react';
+import React, {Component} from 'react';
 
-const Items = (props) => {
-  console.log('items: ', props.isList, props.isCard)
-  //TODO: this is where to fetch availableIds? Does it need to go back to being a component?
-
-  if (props.isList === true) {
-    return (
-      <List isList={props.isList} availableIds={props.availableIds} />
-    )
-  } else {
-    return <Card isCard={props.isCard} availableIds={props.availableIds} />
+class Items extends Component{
+  constructor() {
+    super();
+    this.state = {
+      isList: false,
+      isCard: true,
+      availableIds: [],
+      sortBy: 'recent'
+    };
   }
 
+  // sortBy = (e) => {
+  //   e.preventDefault();
+  //   this.setState(state=>{
+  //     sortBy:'score'
+  //   })
+  // }
+
+  // toggleView = (e) => {
+  //   e.preventDefault();
+  //   this.setState(state => ({
+  //     isList: !state.isList,
+  //     isCard: !state.isCard
+  //   }))
+  // }
+
+
+ render(){
+   console.log('this: ', this);
+   const {isList,isCard,availableIds,sortBy} = this.props;
+
+   if (isList === true) {
+     return (
+       <List isList={isList} availableIds={availableIds} sortBy={sortBy} />
+       )
+      } else {
+        return <Card isCard={isCard} availableIds={availableIds} />
+      }
+    }
 };
 
 export default Items;

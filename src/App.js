@@ -1,18 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import News from './components/News'
+import Menu from './components/Menu'
+import Items from './components/Items'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <News />
+      <header>
+        <Menu />
       </header>
+      <Items />
     </div>
   );
 }
