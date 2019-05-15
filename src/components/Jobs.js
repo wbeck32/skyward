@@ -15,7 +15,8 @@ class Jobs extends Component {
 
   componentDidMount = (async () => {
     this.sort()
-    const availableIds = await fetch(``);
+    const response = await fetch(``);
+    let availableIds = await response.json()
     this.setState({ availableIds })
   })
 
@@ -33,18 +34,18 @@ class Jobs extends Component {
 
   render() {
     console.log('jobs: ', this.state)
-    const { isList, isCard, availableIds } = this.state
+    const { isList, isCard, availableIds, sortBy } = this.state
     return (
       <div>
         {isList &&
           <div>
             <span onClick={() => this.toggleView()}>switch to cards</span>
-            <List sortBy={() => this.sort()} availableIds={availableIds} />
+            <List sortBy={sortBy} availableIds={availableIds} />
           </div>}
         {isCard &&
           <div>
             <span onClick={() => this.toggleView()}>switch to list</span>
-            <Card sortBy={() => this.sort()} availableIds={availableIds} />
+            <Card sortBy={sortBy} availableIds={availableIds} />
           </div>
         }
       </div>

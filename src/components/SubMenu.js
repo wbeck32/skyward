@@ -3,7 +3,6 @@ import '../static/Menu.css'
 import { createBrowserHistory } from 'history'
 
 const SubMenu = (props) => {
-  console.log('sm: ', props)
   const history = createBrowserHistory({
     basename: props.thisPage,
     forceRefresh: true
