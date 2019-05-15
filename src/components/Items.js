@@ -1,6 +1,5 @@
-import Jobs from './Jobs'
 import Menu from './Menu'
-import News from './News'
+import Display from './Display'
 import React, {Component} from 'react';
 import '../static/Items.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -24,8 +23,8 @@ class Items extends Component{
         </div>
         <div className="items">
           <Router>
-            <Route path={["/jobs"]} component={Jobs} />
-            <Route path={["/news"]} component={News} />
+            <Route path={["/jobs"]} component={Display} />
+            <Route path={["/news"]} component={Display} />
           </Router>
         </div>
       </div>
