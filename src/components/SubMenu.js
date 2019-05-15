@@ -14,20 +14,6 @@ const SubMenu = (props) => {
     history.push(order, { sortBy: order })
     history.goForward()
   }
-  // function handleType(type) {
-  //   let isCard = false;
-  //   let isList = false;
-  //   type === 'card' ? isCard = true : isList = true
-  //   history.replace(history.location.pathname, { isCard, isList })
-  //   console.log('history: ', history);
-  //   history.goForward()
-  // }
-
-  // <div className="submenu format">
-  //   <span>format: </span>
-  //   <span onClick={() => handleType('list')}>list</span>{' '}
-  //   <span onClick={() => handleType('card')}>card</span>{' '}
-  // </div>
   return (
     <div>
       <div className="submenu sortby">

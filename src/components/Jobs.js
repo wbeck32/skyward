@@ -13,15 +13,13 @@ class Jobs extends Component {
     };
   }
 
-
   componentDidMount = (async () => {
     const availableIds = await fetch(``);
     this.setState({ availableIds })
   })
 
-  toggleView = (e) => {
-    console.log(e, this.state)
-    e.preventDefault();
+  toggleView = () => {
+    console.log(this.state)
     this.setState(state => ({
       isList: !state.isList,
       isCard: !state.isCard
@@ -31,22 +29,21 @@ class Jobs extends Component {
   render() {
     console.log('jobs: ', this.state)
     const { isList, isCard, availableIds, sortBy } = this.state
-
-    if (isList === true) {
-      return (
-        <div>
-          <span onClick={(e) => this.toggleView}>switch to cards</span>
-          <List availableIds={availableIds} sortBy={sortBy} />
-        </div>
-      )
-    } else if (isCard === true) {
-      return (
-        <div>
-          <span onClick={(e) => this.toggleView}>switch to list</span>
-          <Card availableIds={availableIds} sortBy={sortBy} />
-        </div >
-      )
-    }
+    return (
+      <div>
+        {isList &&
+          <div>
+            <span onClick={() => this.toggleView()}>switch to cards</span>
+            <List availableIds={availableIds} sortBy={sortBy} />
+          </div>}
+        {isCard &&
+          <div>
+            <span onClick={() => this.toggleView()}>switch to list</span>
+            <Card availableIds={availableIds} sortBy={sortBy} />
+          </div >
+        }
+      </div>
+    )
   }
 }
 export default Jobs;

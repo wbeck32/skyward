@@ -1,13 +1,12 @@
-import News from './News'
 import Jobs from './Jobs'
 import Menu from './Menu'
-import '../static/Items.css'
+import News from './News'
 import React, {Component} from 'react';
+import '../static/Items.css'
 import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-// import {createBrowserHistory, createMemoryHistory} from 'history'
 
 class Items extends Component{
   constructor() {
@@ -27,35 +26,20 @@ class Items extends Component{
 
   }
 
-  // toggleView = (e)=> {
-  //   e.preventDefault();
-  //   this.setState(state => ({
-  //     isList: !state.isList,
-  //     isCard: !state.isCard
-  //   }))
-  // };
-
   render() {
     return(
-    <div>
       <div>
-      <Menu />
-      </div>
-      <div>
-
-
-      </div>
-      <div>
-      <Router>
-      <div className="items">
-      <Route path={["/jobs/author"]} component={Jobs} />
-      <Route path={["/news/*"]} component={News} />
-      </div>
-      </Router>
-      </div>
+        <div>
+          <Menu />
+        </div>
+        <div className="items">
+          <Router>
+            <Route path={["/jobs/*"]} component={Jobs} />
+            <Route path={["/news/*"]} component={News} />
+          </Router>
+        </div>
       </div>
       )
-
     }
   };
 
